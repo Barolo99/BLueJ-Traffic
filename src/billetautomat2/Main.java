@@ -40,7 +40,7 @@ public class Main {
 
 		JLabel lblSaldo = new JLabel("Saldo");
 		lblSaldo.setBounds(694, 8, 69, 20);
-		Saldo saldo = new Saldo(lblSaldo, 0);
+		Saldo saldo = new Saldo(lblSaldo, 100);
 		initialize(lblSaldo);
 	}
 
@@ -54,6 +54,8 @@ public class Main {
 		frame.getContentPane().setLayout(null);
 		Billet1Screen billet1Screen = new Billet1Screen();
 		billet1Screen.setBounds(0, 39, 778, 267);
+		Login login = new Login();
+		login.setBounds(0, 39, 778, 267);
 		JPanel topPanel = new JPanel();
 		topPanel.setBounds(0, 0, 778, 38);
 		frame.getContentPane().add(topPanel);
@@ -74,7 +76,7 @@ public class Main {
 		frame.getContentPane().add(startPanel);
 		startPanel.setLayout(null);
 		
-		JButton btnBillet = new JButton("Billet1");
+		JButton btnBillet = new JButton("Zonebillet");
 		btnBillet.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -86,6 +88,18 @@ public class Main {
 		btnBillet.setBounds(15, 16, 115, 29);
 		startPanel.add(btnBillet);
 		
+		JButton btnAdminlogin = new JButton("Admin-login");
+		btnAdminlogin.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.getContentPane().remove(startPanel);
+				frame.getContentPane().add(login);
+				login.updateUI();
+			}
+		});
+		btnAdminlogin.setBounds(625, 222, 138, 29);
+		startPanel.add(btnAdminlogin);
+		
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.setBounds(0, 313, 778, 31);
 		frame.getContentPane().add(bottomPanel);
@@ -96,6 +110,7 @@ public class Main {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.getContentPane().remove(billet1Screen);
+				frame.getContentPane().remove(login);
 				//frame.getContentPane().remove(startPanel); fjern alle paneler der kan være der.
 				//frame.getContentPane().remove(startPanel);
 				

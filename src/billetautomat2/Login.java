@@ -50,10 +50,23 @@ public class Login extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				String uname =textField_1.getText(); 
+				//@SuppressWarnings("deprecation")
 				String pass=passwordField.getText();
 				
-				System.out.println(pass);
 				System.out.println(uname);
+				System.out.println(pass);
+				
+				if((uname.equals("Barolo99")) && (pass.equals("1234"))) {
+					
+					
+					
+					System.out.println("It works");
+						
+					
+				}else {
+					System.out.println("Do not work");
+				}
+				
 				
 			}
 		});
